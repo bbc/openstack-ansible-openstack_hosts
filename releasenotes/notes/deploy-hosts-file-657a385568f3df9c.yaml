@@ -1,0 +1,6 @@
+---
+features:
+  - |
+    In deployments where a separate host is used to manage the OpenStack
+    Ansible configuration, the '/etc/hosts' file on that host will now include
+    a section adding hostname to IP resolution for all hosts in the inventory.

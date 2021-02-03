@@ -42,3 +42,12 @@
     dest: /etc/hosts
     block: "{{ _etc_hosts_content | join('\n') }}"
     marker: "### {mark} OPENSTACK-ANSIBLE MANAGED BLOCK ###"
+
+- name: Update hosts file on deploy host
+  blockinfile:
+    dest: /etc/hosts
+    block: "{{ _etc_hosts_content | join('\n') }}"
+    marker: "### {mark} OPENSTACK-ANSIBLE MANAGED BLOCK ###"
+  run_once: True
+  delegate_to: localhost
+  become: True
